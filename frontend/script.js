@@ -1,5 +1,6 @@
 const toggle = document.getElementById("theme-toggle");
 const icon = document.querySelector(".theme-icon");
+const API_BASE_URL = "https://prepar.onrender.com";
 
 if (toggle && icon) {
     const savedTheme = localStorage.getItem("theme");
@@ -78,8 +79,8 @@ async function handleAuth() {
     }
 
     const url = isLogin
-        ? "http://localhost:5000/api/login"
-        : "http://localhost:5000/api/signup";
+        ? `${API_BASE_URL}/api/login`
+        : `${API_BASE_URL}/api/signup`;
 
     try {
         const res = await fetch(url, {
@@ -151,7 +152,7 @@ async function loadDashboardStats() {
     if (!totalInterviews) return;
 
     try {
-        const res = await fetch("http://localhost:5000/api/dashboard");
+        const res = await fetch(`${API_BASE_URL}/api/dashboard`);
         const data = await res.json();
 
         if (!data.success) return;
@@ -175,7 +176,7 @@ async function loadChallenges() {
     if (!challengeList) return;
 
     try {
-        const res = await fetch("http://localhost:5000/api/challenges");
+        const res = await fetch(`${API_BASE_URL}/api/challenges`);
         const data = await res.json();
 
         if (!data.success) {
@@ -205,7 +206,7 @@ async function loadChallenges() {
 }
 async function completeChallenge(id) {
     try {
-        const res = await fetch("http://localhost:5000/api/challenges/complete", {
+        const res = await fetch(`${API_BASE_URL}/api/challenges/complete`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -287,7 +288,7 @@ async function loadLeaderboard() {
     if (!leaderboardList) return;
 
     try {
-        const res = await fetch("http://localhost:5000/api/leaderboard");
+        const res = await fetch(`${API_BASE_URL}/api/leaderboard`);
         const data = await res.json();
 
         if (!data.success) {
@@ -334,12 +335,12 @@ async function analyzeResume() {
             const formData = new FormData();
             formData.append("resume", file);
 
-            res = await fetch("http://localhost:5000/api/resume/analyze-file", {
+            res = await fetch(`${API_BASE_URL}/api/resume/analyze-file`, {
                 method: "POST",
                 body: formData
             });
         } else if (typedText) {
-            res = await fetch("http://localhost:5000/api/resume/analyze", {
+            res = await fetch(`${API_BASE_URL}/api/resume/analyze`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -412,7 +413,7 @@ async function startInterview() {
     if (!questionBox || !answerBox || !resultBox) return;
 
     try {
-        const res = await fetch("http://localhost:5000/api/interview/start");
+        const res = await fetch(`${API_BASE_URL}/api/interview/start`);
         const data = await res.json();
 
         if (!data.success) {
@@ -468,7 +469,7 @@ async function submitAnswer() {
 
      else {
         try {
-            const res = await fetch("http://localhost:5000/api/interview/submit", {
+            const res = await fetch(`${API_BASE_URL}/api/interview/submit`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -523,7 +524,7 @@ async function loadCodingQuestions() {
     if (!codingList) return;
 
     try {
-        const res = await fetch("http://localhost:5000/api/coding-questions");
+        const res = await fetch(`${API_BASE_URL}/api/coding-questions`);
         const data = await res.json();
 
         if (!data.success) {
@@ -591,7 +592,7 @@ async function loadAnalytics() {
     if (!analyticsBox) return;
 
     try {
-        const res = await fetch("http://localhost:5000/api/analytics");
+        const res = await fetch(`${API_BASE_URL}/api/analytics`);
         const data = await res.json();
 
         if (!data.success) {
@@ -652,7 +653,7 @@ async function loadInterviewVault() {
     if (!vaultList) return;
 
     try {
-        const res = await fetch("http://localhost:5000/api/interview-vault");
+        const res = await fetch(`${API_BASE_URL}/api/interview-vault`);
         const data = await res.json();
 
         if (!data.success) {
@@ -704,7 +705,7 @@ async function getCareerAdvice() {
     resultBox.innerHTML = "<p>Generating career guidance...</p>";
 
     try {
-        const res = await fetch("http://localhost:5000/api/career-coach", {
+        const res = await fetch(`${API_BASE_URL}/api/career-coach`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

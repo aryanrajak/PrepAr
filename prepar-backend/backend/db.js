@@ -4,7 +4,7 @@ async function connectDB() {
     console.log("Trying to connect MongoDB...");
 
     try {
-        await mongoose.connect("mongodb+srv://allowwebsite420_db_user:EEIssjDqS2HY2wbY@cluster0.uxi97rt.mongodb.net/preparDB?retryWrites=true&w=majority&appName=Cluster0");
+        await mongoose.connect(process.env.MONGODB_URI);
         console.log("MongoDB connected successfully");
     } catch (error) {
         console.log("MongoDB connection error:", error.message);
