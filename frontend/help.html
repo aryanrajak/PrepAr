@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help - PrepAR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+    <h2>🤖 PrepAR</h2>
+    <div class="nav-links">
+        <button id="theme-toggle" class="theme-btn">
+            <span class="theme-icon">🌙</span>
+        </button>
+
+        <a href="index.html#features">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="help.html">Help</a>
+
+        <button class="btn" id="nav-auth-btn" onclick="handleNavAuth()">
+            Sign In
+        </button>
+    </div>
+</nav>
+
+
+    <section class="help-hero">
+        <span class="about-tag">Support Center</span>
+        <h1>How Can We Help You?</h1>
+        <p>Find answers about interviews, coding practice, resume tools, challenges, dashboard access, and account issues.</p>
+    </section>
+
+    <section class="help-grid">
+        <div class="help-card">
+            <h3>Account & Login</h3>
+            <p>Need help logging in, signing up, or opening your dashboard? Start here.</p>
+        </div>
+
+        <div class="help-card">
+            <h3>Mock Interviews</h3>
+            <p>Learn how AI interview practice works and how your results will be tracked.</p>
+        </div>
+
+        <div class="help-card">
+            <h3>Coding Practice</h3>
+            <p>Understand coding challenges, progress tracking, and interview question practice.</p>
+        </div>
+
+        <div class="help-card">
+            <h3>Resume Tools</h3>
+            <p>Get help with resume analyzer, future premium features, and smart recommendations.</p>
+        </div>
+    </section>
+
+    <section class="help-faq-section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    How do I access the dashboard?
+                    <span class="arrow">⌄</span>
+                </div>
+                <div class="faq-answer">
+                    Sign up or log in first. After successful login, you will be redirected to the dashboard automatically.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Why are some premium features marked as coming soon?
+                    <span class="arrow">⌄</span>
+                </div>
+                <div class="faq-answer">
+                    PrepAR is being built step by step. Some advanced tools like premium AI coaching and deep analytics are planned for future versions.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    How do daily challenges work?
+                    <span class="arrow">⌄</span>
+                </div>
+                <div class="faq-answer">
+                    Daily challenges help you practice consistently. Completing them increases your challenge count and points.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Can I use PrepAR for coding interview preparation?
+                    <span class="arrow">⌄</span>
+                </div>
+                <div class="faq-answer">
+                    Yes. PrepAR includes coding practice and interview-focused preparation features to help improve technical rounds.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-box">
+    <span class="contact-tag">Contact Support</span>
+    <h2>Still Need Help?</h2>
+    <p>
+        If you are stuck anywhere in PrepAR, reach out directly and we’ll help you continue your preparation smoothly.
+    </p>
+
+    <div class="contact-details">
+        <div class="contact-item">
+            <h3>Email</h3>
+            <p>allowwebsite420@gmail.com</p>
+        </div>
+
+        <div class="contact-item">
+            <h3>Owner</h3>
+            <p>Aryan Rajak</p>
+        </div>
+    </div>
+
+    <button class="pricing-btn" onclick="handleNavAuth()">Open Dashboard</button>
+</section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>🤖 PrepAR</h2>
+            </div>
+
+            <div class="footer-grid">
+                <div>
+                    <h4>Product</h4>
+                    <a href="index.html#features">Features</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="javascript:void(0)" onclick="goToDashboard()">Resume Analyzer</a>
+                    <a href="about.html">About</a>
+                </div>
+
+                <div>
+                    <h4>Company</h4>
+                    <a href="help.html">Contact</a>
+                    <a href="help.html">Terms</a>
+                    <a href="help.html">Privacy</a>
+                </div>
+
+                <div>
+                    <h4>Resources</h4>
+                    <a href="javascript:void(0)" onclick="goToDashboard()">AI & ML Roadmap</a>
+                    <a href="javascript:void(0)" onclick="goToDashboard()">AI Guide</a>
+                    <a href="javascript:void(0)" onclick="goToDashboard()">Free Interview</a>
+                    <a href="help.html">FAQ</a>
+                </div>
+
+                <div>
+                    <h4>Connect</h4>
+                    <div class="socials">
+                        <a href="https://www.youtube.com/c/itsAryan008" target="_blank" title="YouTube">📺</a>
+                        <a href="https://github.com/aryanrajak" target="_blank" title="GitHub">💻</a>
+                        <a href="https://www.linkedin.com/in/aryan-rajak-a9245a262" target="_blank" title="LinkedIn">🔗</a>
+                        <a href="mailto:allowwebsite420@gmail.com" title="Gmail">📩</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 PrepAR. All rights reserved.</p>
+                <p>Made with ❤️ by Aryan</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="page-loader" class="page-loader">
+    <div class="loader-box">
+        <div class="spinner"></div>
+        <p>loading....</p>
+    </div>
+</div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - PrepAR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+    <h2>🤖 PrepAR</h2>
+    <div class="nav-links">
+        <button id="theme-toggle" class="theme-btn">
+            <span class="theme-icon">🌙</span>
+        </button>
+
+        <a href="index.html#features">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="help.html">Help</a>
+
+        <button class="btn" id="nav-auth-btn" onclick="handleNavAuth()">
+            Sign In
+        </button>
+    </div>
+</nav>
+
+
+    <section class="pricing-hero">
+        <span class="pricing-tag">Built For Students</span>
+
+        <h1>Choose Your PrepAR Plan</h1>
+        <p>Start free today and unlock premium tools as your interview journey grows.</p>
+    </section>
+
+    <section class="pricing-grid">
+        <div class="pricing-card free-plan">
+            <span class="plan-badge">For Beginners</span>
+            <h2>Free</h2>
+            <h3>₹0<span>/month</span></h3>
+            <p class="plan-text">Perfect for students starting interview preparation.</p>
+
+            <ul class="pricing-list">
+                <li>Access to basic dashboard</li>
+                <li>Daily challenges</li>
+                <li>Basic coding practice</li>
+                <li>Leaderboard access</li>
+                <li>Limited mock interview access</li>
+            </ul>
+
+            <button class="pricing-btn" onclick="handleNavAuth()">Get Started</button>
+        </div>
+
+        <div class="pricing-card premium-plan">
+            <span class="plan-badge premium-badge">Coming Soon</span>
+            <h2>Premium</h2>
+            <h3>₹499<span>/month</span></h3>
+            <p class="plan-text">Advanced tools for serious placement and interview prep.</p>
+
+            <ul class="pricing-list">
+                <li>Unlimited AI mock interviews</li>
+                <li>Advanced resume analysis</li>
+                <li>Detailed performance analytics</li>
+                <li>Personalized AI career coach</li>
+                <li>Premium coding interview sets</li>
+                <li>Interview vault and history tracking</li>
+                <li>Priority leaderboard rewards</li>
+            </ul>
+
+            <button class="pricing-btn premium-button">Coming Soon</button>
+        </div>
+    </section>
+
+    <section class="future-section">
+        <h2>Premium Features Coming In Future</h2>
+        <div class="future-grid">
+            <div class="future-card">
+                <h3>AI Career Coach</h3>
+                <p>Get role-based guidance, skill roadmaps, and interview strategies tailored to your goal.</p>
+            </div>
+
+            <div class="future-card">
+                <h3>Resume Roast Pro</h3>
+                <p>Deep ATS analysis, recruiter-style review, and stronger project bullet suggestions.</p>
+            </div>
+
+            <div class="future-card">
+                <h3>Mock Interview Reports</h3>
+                <p>Full reports on communication, confidence, eye contact, and technical accuracy.</p>
+            </div>
+
+            <div class="future-card">
+                <h3>Premium Contests</h3>
+                <p>Exclusive coding contests, badges, and monthly premium rewards.</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>🤖 PrepAR</h2>
+            </div>
+
+            <div class="footer-grid">
+                <div>
+                    <h4>Product</h4>
+                    <a href="index.html#features">Features</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="javascript:void(0)" onclick="goToDashboard()">Resume Analyzer</a>
+                    <a href="about.html">About</a>
+                </div>
+
+                <div>
+                    <h4>Company</h4>
+                    <a href="help.html">Contact</a>
+                    <a href="help.html">Terms</a>
+                    <a href="help.html">Privacy</a>
+                </div>
+
+                <div>
+                    <h4>Resources</h4>
+                    <a href="javascript:void(0)" onclick="goToDashboard()">AI & ML Roadmap</a>
+                    <a href="javascript:void(0)" onclick="goToDashboard()">AI Guide</a>
+                    <a href="javascript:void(0)" onclick="goToDashboard()">Free Interview</a>
+                    <a href="help.html">FAQ</a>
+                </div>
+
+                <div>
+                    <h4>Connect</h4>
+                    <div class="socials">
+                        <a href="https://www.youtube.com/c/itsAryan008" target="_blank" title="YouTube">📺</a>
+                        <a href="https://github.com/aryanrajak" target="_blank" title="GitHub">💻</a>
+                        <a href="https://www.linkedin.com/in/aryan-rajak-a9245a262" target="_blank" title="LinkedIn">🔗</a>
+                        <a href="mailto:allowwebsite420@gmail.com" title="Gmail">📩</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 PrepAR. All rights reserved.</p>
+                <p>Made with ❤️ by Aryan</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="page-loader" class="page-loader">
+    <div class="loader-box">
+        <div class="spinner"></div>
+        <p>loading....</p>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

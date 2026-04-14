@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - PrepAR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-page">
+
+        <nav class="dashboard-navbar">
+            <div>
+                <h1 class="dashboard-title">Dashboard</h1>
+                <p class="dashboard-subtitle">Welcome back! Here's what's happening with your interview prep.</p>
+            </div>
+
+            <div class="status-badge">
+                <span class="status-dot"></span>
+                Online
+            </div>
+        </nav>
+
+        <section class="dashboard-tabs">
+            <button class="tab active" data-section="overview" onclick="showSection('overview', this)">Overview</button>
+            <button class="tab" data-section="aiprep" onclick="showSection('aiprep', this)">AI Prep</button>
+            <button class="tab" data-section="resume" onclick="showSection('resume', this)">Resume Builder</button>
+            <button class="tab" data-section="challenges" onclick="showSection('challenges', this)">Challenges</button>
+            <button class="tab" data-section="coding" onclick="showSection('coding', this)">Coding Interview</button>
+            <button class="tab" data-section="leaderboard" onclick="showSection('leaderboard', this)">Leaderboard</button>
+            <button class="tab" data-section="analytics" onclick="showSection('analytics', this)">Analytics</button>
+            <button class="tab" data-section="vault" onclick="showSection('vault', this)">Interview Vault</button>
+            <button class="tab" data-section="career" onclick="showSection('career', this)">Career Coach</button>
+            <button class="pricing-btn" id="submit-answer-btn" onclick="submitAnswer()">Submit Answer</button>
+
+
+        </section>
+
+        <div class="dashboard-content">
+
+            <section id="overview-section" class="dashboard-section active-section">
+                <section class="welcome-banner">
+                    <div class="banner-content">
+                        <p class="banner-greeting" id="welcome-text">Good afternoon, User!</p>
+                        <h2>Ready to Start Your Journey?</h2>
+                        <p>Your first practice interview takes just 15 minutes. Let's see where you stand!</p>
+
+                        <div class="banner-buttons">
+                            <button class="banner-btn primary-btn" onclick="showSectionByName('aiprep')">Start First Interview</button>
+                            <button class="banner-btn secondary-btn" onclick="window.location.href='index.html'">Go Home</button>
+                            <button class="banner-btn secondary-btn" onclick="logoutUser()">Logout</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="stats-grid">
+                    <div class="stat-card blue">
+                        <h3 id="total-interviews">0</h3>
+                        <p>Total Interviews</p>
+                    </div>
+
+                    <div class="stat-card green">
+                        <h3 id="average-score">0%</h3>
+                        <p>Average Score</p>
+                    </div>
+
+                    <div class="stat-card purple">
+                        <h3 id="skills-mastered">0</h3>
+                        <p>Skills Mastered</p>
+                    </div>
+
+                    <div class="stat-card orange">
+                        <h3 id="next-goal">0%</h3>
+                        <p>Next Goal</p>
+                    </div>
+
+                    <div class="stat-card gold">
+                        <h3 id="total-points">0</h3>
+                        <p>Total Points</p>
+                    </div>
+
+                    <div class="stat-card red">
+                        <h3 id="day-streak">0</h3>
+                        <p>Day Streak</p>
+                    </div>
+
+                    <div class="stat-card sky">
+                        <h3 id="total-challenges">0</h3>
+                        <p>Challenges</p>
+                    </div>
+
+                    <div class="stat-card violet">
+                        <h3 id="badges-earned">0</h3>
+                        <p>Badges</p>
+                    </div>
+                </section>
+            </section>
+
+           <section id="aiprep-section" class="dashboard-section">
+    <h2 class="tools-title">AI Mock Interview</h2>
+
+    <div class="mock-interview-box">
+        <div class="mock-question-card">
+            <h3>Interview Question</h3>
+            <p id="mock-question">Click the button below to start your interview.</p>
+        </div>
+
+        <textarea id="mock-answer" placeholder="Write your answer here..."></textarea>
+
+        <div class="mock-buttons">
+            <button class="pricing-btn" onclick="startInterview()">Start Interview</button>
+            <button class="pricing-btn" onclick="submitAnswer()">Submit Answer</button>
+        </div>
+
+        <div class="resume-result" id="mock-result">
+            <p>Your interview feedback will appear here.</p>
+        </div>
+    </div>
+</section>
+<section id="resume-section" class="dashboard-section">
+    <div class="resume-builder-header">
+        <h2 class="tools-title">Resume Builder</h2>
+<div class="resume-template-bar">
+    <label for="resume-template">Template</label>
+    <select id="resume-template" onchange="updateResumePreview()">
+        <option value="classic">Classic</option>
+        <option value="modern">Modern</option>
+        <option value="premium">Premium</option>
+    </select>
+
+    <button class="pricing-btn" onclick="downloadResume()">Download Resume</button>
+</div>
+
+    </div>
+
+    <div class="resume-builder-layout">
+        <div class="resume-form-panel">
+            <div class="resume-form-card">
+                <h3>Personal Info</h3>
+                <input type="text" id="resume-name" placeholder="Full Name" oninput="updateResumePreview()">
+                <input type="email" id="resume-email" placeholder="Email" oninput="updateResumePreview()">
+                <input type="text" id="resume-phone" placeholder="Phone Number" oninput="updateResumePreview()">
+                <input type="text" id="resume-location" placeholder="Location" oninput="updateResumePreview()">
+                <input type="text" id="resume-linkedin" placeholder="LinkedIn" oninput="updateResumePreview()">
+                <input type="text" id="resume-github" placeholder="GitHub" oninput="updateResumePreview()">
+            </div>
+
+            <div class="resume-form-card">
+                <h3>Professional Summary</h3>
+                <textarea id="resume-summary" placeholder="Write a short professional summary..." oninput="updateResumePreview()"></textarea>
+            </div>
+
+            <div class="resume-form-card">
+                <h3>Education</h3>
+                <textarea id="resume-education" placeholder="Example: B.Tech in Computer Science - XYZ College (2022 - 2026)" oninput="updateResumePreview()"></textarea>
+            </div>
+
+            <div class="resume-form-card">
+                <h3>Projects</h3>
+                <textarea id="resume-projects" placeholder="Write your projects, one per line..." oninput="updateResumePreview()"></textarea>
+            </div>
+
+            <div class="resume-form-card">
+                <h3>Skills</h3>
+                <textarea id="resume-skills" placeholder="Example: HTML, CSS, JavaScript, React, Node.js" oninput="updateResumePreview()"></textarea>
+            </div>
+
+            <div class="resume-form-card">
+                <h3>Experience</h3>
+                <textarea id="resume-experience" placeholder="Write your experience or internships..." oninput="updateResumePreview()"></textarea>
+            </div>
+
+            <div class="resume-form-card">
+                <h3>Certifications</h3>
+                <textarea id="resume-certifications" placeholder="Add certifications..." oninput="updateResumePreview()"></textarea>
+            </div>
+
+            <div class="resume-form-card">
+                <h3>Achievements</h3>
+                <textarea id="resume-achievements" placeholder="Add achievements..." oninput="updateResumePreview()"></textarea>
+            </div>
+        </div>
+
+        <div class="resume-preview-panel">
+            <div class="resume-preview classic-template" id="resume-preview">
+                <div class="resume-preview-header">
+                    <h1 id="preview-name">Your Name</h1>
+                    <p id="preview-contact">email@example.com | +91 9876543210 | Your City</p>
+                    <p id="preview-links">linkedin | github</p>
+                </div>
+
+                <div class="resume-preview-section">
+                    <h2>Professional Summary</h2>
+                    <p id="preview-summary">Your summary will appear here.</p>
+                </div>
+
+                <div class="resume-preview-section">
+                    <h2>Education</h2>
+                    <p id="preview-education">Your education details will appear here.</p>
+                </div>
+
+                <div class="resume-preview-section">
+                    <h2>Projects</h2>
+                    <ul id="preview-projects">
+                        <li>Your projects will appear here.</li>
+                    </ul>
+                </div>
+
+                <div class="resume-preview-section">
+                    <h2>Skills</h2>
+                    <p id="preview-skills">Your skills will appear here.</p>
+                </div>
+
+                <div class="resume-preview-section">
+                    <h2>Experience</h2>
+                    <p id="preview-experience">Your experience will appear here.</p>
+                </div>
+
+                <div class="resume-preview-section">
+                    <h2>Certifications</h2>
+                    <p id="preview-certifications">Your certifications will appear here.</p>
+                </div>
+
+                <div class="resume-preview-section">
+                    <h2>Achievements</h2>
+                    <p id="preview-achievements">Your achievements will appear here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <section id="challenges-section" class="dashboard-section">
+                <h2 class="tools-title">Daily Challenges</h2>
+                <div class="challenge-grid" id="challenge-list">
+                    <p>Loading challenges...</p>
+                </div>
+            </section>
+<section id="coding-section" class="dashboard-section">
+    <h2 class="tools-title">Coding Interview Practice</h2>
+
+    <div class="coding-toolbar">
+        <input
+            type="text"
+            id="coding-search"
+            placeholder="Search coding questions..."
+            oninput="filterCodingQuestions()"
+        >
+
+        <select id="coding-difficulty" onchange="filterCodingQuestions()">
+            <option value="All">All Difficulties</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+        </select>
+    </div>
+
+    <div class="coding-grid" id="coding-list">
+        <p>Loading coding questions...</p>
+    </div>
+</section>
+
+
+<section id="leaderboard-section" class="dashboard-section">
+    <h2 class="tools-title">Leaderboard</h2>
+    <div class="leaderboard-list" id="leaderboard-list">
+        <p>Loading leaderboard...</p>
+    </div>
+</section>
+<section id="career-section" class="dashboard-section">
+    <h2 class="tools-title">Career Coach</h2>
+
+    <div class="career-coach-box">
+        <select id="career-role">
+            <option value="">Select your target role</option>
+            <option value="Frontend Developer">Frontend Developer</option>
+            <option value="Backend Developer">Backend Developer</option>
+            <option value="Full Stack Developer">Full Stack Developer</option>
+            <option value="Data Analyst">Data Analyst</option>
+            <option value="Machine Learning Engineer">Machine Learning Engineer</option>
+            <option value="Software Engineer">Software Engineer</option>
+        </select>
+
+        <textarea id="career-input" placeholder="Describe your current skills, experience, or what you want to improve..."></textarea>
+
+        <button class="pricing-btn" onclick="getCareerAdvice()">Get Career Guidance</button>
+    </div>
+
+    <div class="career-result" id="career-result">
+        <p>Your personalized career roadmap will appear here.</p>
+    </div>
+</section>
+
+
+<section id="vault-section" class="dashboard-section">
+    <h2 class="tools-title">Interview Vault</h2>
+    <div class="vault-list" id="vault-list">
+        <p>No interview records yet.</p>
+    </div>
+</section>
+
+            <section id="analytics-section" class="dashboard-section">
+    <h2 class="tools-title">Performance Analytics</h2>
+    <div class="analytics-grid" id="analytics-box">
+        <p>Loading analytics...</p>
+    </div>
+</section>
+
+            
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="script.js"></script>
+
+
+    
+</body>
+</html>

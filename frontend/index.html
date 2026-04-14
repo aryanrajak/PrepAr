@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrepAR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <h2>🤖 PrepAR</h2>
+        <div class="nav-links">
+            <button id="theme-toggle" class="theme-btn">
+                <span class="theme-icon">🌙</span>
+            </button>
+
+            <a href="index.html#features">Features</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="about.html">About</a>
+            <a href="help.html">Help</a>
+
+            <button class="btn" id="nav-auth-btn" onclick="handleNavAuth()">
+                Sign In
+            </button>
+        </div>
+    </nav>
+
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide-track">
+                <div class="pill orange">Daily Challenges</div>
+                <div class="pill purple">Career Coach</div>
+                <div class="pill red">Mock Tests</div>
+                <div class="pill yellow">Leaderboard</div>
+                <div class="pill green">Performance Analytics</div>
+                <div class="pill blue">AI Interviews</div>
+                <div class="pill cyan">Coding Practice</div>
+                <div class="pill white">Resume Analysis</div>
+
+                <div class="pill orange">Daily Challenges</div>
+                <div class="pill purple">Career Coach</div>
+                <div class="pill red">Mock Tests</div>
+                <div class="pill yellow">Leaderboard</div>
+                <div class="pill green">Performance Analytics</div>
+                <div class="pill blue">AI Interviews</div>
+                <div class="pill cyan">Coding Practice</div>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero">
+       <h1 class="hero-title">
+    Prepare <span class="highlight">Smarter.</span><br>Get Hired Faster
+</h1>
+
+
+        <p class="hero-subtitle">
+            From <span class="highlight-white">AI mock interviews</span> to
+            <span class="highlight-white">resume optimization</span>, coding challenges to career coaching
+            — everything students and professionals need to land their dream job.
+        </p>
+
+        <div class="buttons">
+            <button class="primary" onclick="goToDashboard()">Get Started</button>
+            <button class="secondary" onclick="openDemoModal()">Watch Demo</button>
+        </div>
+    </section>
+
+    <section class="cards">
+        <div class="card">
+            <div class="icon">🤖</div>
+            <h3>AI Mock Interviews</h3>
+            <p>Practice real interview scenarios anytime</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💻</div>
+            <h3>Coding Practice</h3>
+            <p>Solve problems and improve your skills</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📄</div>
+            <h3>Resume Analyzer</h3>
+            <p>Optimize your resume for better chances</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🏆</div>
+            <h3>Leaderboard</h3>
+            <p>Compete and track your performance</p>
+        </div>
+    </section>
+
+    <section class="features-section" id="features">
+        <h2 class="section-title reveal">
+            Build Your <span class="gradient-text">Dream Career</span>
+        </h2>
+
+        <p class="section-subtitle">
+            Everything you need — from AI interviews to coding mastery — to walk into any interview with confidence 🚀
+        </p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon">🤖</div>
+                <h3>AI Mock Interviews</h3>
+                <p>Practice with adaptive AI that learns your level. Real-time feedback on communication and problem-solving.</p>
+                <a href="javascript:void(0)" onclick="goToDashboard()">Learn More →</a>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">💻</div>
+                <h3>Coding Interviews</h3>
+                <p>Solve real coding problems with our built-in IDE. Multiple languages, test cases, and instant feedback.</p>
+                <a href="javascript:void(0)" onclick="goToDashboard()">Learn More →</a>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">📄</div>
+                <h3>AI Resume Builder</h3>
+                <p>Generate ATS-optimized resumes with AI and get smart recommendations.</p>
+                <a href="javascript:void(0)" onclick="goToDashboard()">Learn More →</a>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">🎯</div>
+                <h3>Daily Challenges</h3>
+                <p>Sharpen skills with daily coding and behavioral challenges.</p>
+                <a href="javascript:void(0)" onclick="goToDashboard()">Learn More →</a>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">🔥</div>
+                <h3>AI Resume Roast</h3>
+                <p>Get your resume reviewed in a fun but helpful way.</p>
+                <a href="javascript:void(0)" onclick="goToDashboard()">Learn More →</a>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">🏆</div>
+                <h3>Leaderboard</h3>
+                <p>Compete globally and track your performance.</p>
+                <a href="javascript:void(0)" onclick="goToDashboard()">Learn More →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="gamify-section">
+        <div class="section-header">
+            <div class="trophy">🏆</div>
+            <h2>Level Up Your Skills</h2>
+            <p>Make interview prep fun and competitive with gamification</p>
+        </div>
+
+        <div class="gamify-grid">
+            <div class="gamify-card">
+                <div class="icon">🎯</div>
+                <h3>Daily Challenges</h3>
+                <ul>
+                    <li>✔ Fresh questions every day</li>
+                    <li>✔ Build consistent habits</li>
+                    <li>✔ Earn points & badges</li>
+                    <li>✔ Track your streak</li>
+                </ul>
+            </div>
+
+            <div class="gamify-card">
+                <div class="icon">🏆</div>
+                <h3>Global Leaderboard</h3>
+                <ul>
+                    <li>✔ Compete worldwide</li>
+                    <li>✔ Track your ranking</li>
+                    <li>✔ Stay motivated</li>
+                    <li>✔ Join the community</li>
+                </ul>
+            </div>
+
+            <div class="gamify-card premium">
+                <div class="icon">🏆</div>
+                <h3>Monthly Rewards</h3>
+                <p class="reward-text">Top 3 performers win:</p>
+
+                <div class="reward-box">
+                    <strong>FREE 1-Month Premium</strong>
+                    <span>Full access to all features</span>
+                </div>
+
+                <div class="positions">
+                    <span class="first">1st</span>
+                    <span class="second">2nd</span>
+                    <span class="third">3rd</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reasons">
+        <h2 class="reasons-title">Why Choose PrepAR?</h2>
+        <p class="reasons-subtitle">
+            Experience AI-driven interview preparation designed for your success
+        </p>
+
+        <div class="reasons-grid">
+            <div class="reason-card">
+                <div class="icon-box">🤖</div>
+                <h3>Realistic Video Call Experience</h3>
+                <p>Practice with AI interviewer in a real video call interface.</p>
+            </div>
+
+            <div class="reason-card">
+                <div class="icon-box">🧠</div>
+                <h3>ML-Powered Proctoring</h3>
+                <p>Face detection, gaze tracking, and fair practice sessions.</p>
+            </div>
+
+            <div class="reason-card">
+                <div class="icon-box">📈</div>
+                <h3>Emotion & Confidence Analysis</h3>
+                <p>Analyze stress, confidence, and engagement in real-time.</p>
+            </div>
+
+            <div class="reason-card">
+                <div class="icon-box">📊</div>
+                <h3>Behavioral Analytics</h3>
+                <p>Track eye contact, speaking pace, and professionalism.</p>
+            </div>
+
+            <div class="reason-card">
+                <div class="icon-box">✅</div>
+                <h3>Industry-Standard Questions</h3>
+                <p>Practice with updated questions from top companies.</p>
+            </div>
+
+            <div class="reason-card">
+                <div class="icon-box">🎯</div>
+                <h3>50+ Interview Types</h3>
+                <p>Technical, behavioral, system design, and more.</p>
+            </div>
+        </div>
+
+        <div class="butn">
+            <button class="done" onclick="goToDashboard()">Try PrepAR Free →</button>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <h2 class="faq-title">Frequently Asked Questions</h2>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    How does the AI interviewer work?
+                    <span class="arrow">⌄</span>
+                </div>
+                <div class="faq-answer">
+                    Our AI simulates real interview scenarios and gives instant feedback.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    What types of interviews can I practice?
+                    <span class="arrow">⌄</span>
+                </div>
+                <div class="faq-answer">
+                    You can practice HR, technical, behavioral and coding interviews.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    How does the resume analyzer work?
+                    <span class="arrow">⌄</span>
+                </div>
+                <div class="faq-answer">
+                    Our ATS-optimized analyzer scans your resume, provides keyword optimization suggestions, identifies missing skills, and gives an ATS compatibility score.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    What are daily challenges?
+                    <span class="arrow">⌄</span>
+                </div>
+                <div class="faq-answer">
+                    Fresh coding and behavioral questions released every day to build consistent practice habits. Complete them to earn points and climb the leaderboard.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Can I track my progress over time?
+                    <span class="arrow">⌄</span>
+                </div>
+                <div class="faq-answer">
+                    Yes! Our analytics dashboard tracks performance trends, identifies improvement areas, and shows your growth over time.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>🤖 PrepAR</h2>
+            </div>
+
+            <div class="footer-grid">
+                <div>
+                    <h4>Product</h4>
+                    <a href="index.html#features">Features</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="javascript:void(0)" onclick="goToDashboard()">Resume Analyzer</a>
+                    <a href="about.html">About</a>
+                </div>
+
+                <div>
+                    <h4>Company</h4>
+                    <a href="help.html">Contact</a>
+                    <a href="help.html">Terms</a>
+                    <a href="help.html">Privacy</a>
+                </div>
+
+                <div>
+                    <h4>Resources</h4>
+                    <a href="javascript:void(0)" onclick="goToDashboard()">AI & ML Roadmap</a>
+                    <a href="javascript:void(0)" onclick="goToDashboard()">AI Guide</a>
+                    <a href="javascript:void(0)" onclick="goToDashboard()">Free Interview</a>
+                    <a href="help.html">FAQ</a>
+                </div>
+
+                <div>
+                    <h4>Connect</h4>
+                    <div class="socials">
+                        <a href="https://www.youtube.com/c/itsAryan008" target="_blank" title="YouTube">📺</a>
+                        <a href="https://github.com/aryanrajak" target="_blank" title="GitHub">💻</a>
+                        <a href="https://www.linkedin.com/in/aryan-rajak-a9245a262" target="_blank" title="LinkedIn">🔗</a>
+                        <a href="mailto:allowwebsite420@gmail.com" title="Gmail">📩</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 PrepAR. All rights reserved.</p>
+                <p>Made with ❤️ by Aryan</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="page-loader" class="page-loader">
+        <div class="loader-box">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <div class="demo-modal" id="demo-modal">
+        <div class="demo-modal-content">
+            <button class="demo-close" onclick="closeDemoModal()">×</button>
+
+            <div class="demo-video-placeholder">
+                <div class="play-circle">▶</div>
+            </div>
+
+            <h2>PrepAR Demo</h2>
+            <p>
+                Explore how PrepAR helps students with AI mock interviews, coding practice,
+                resume analysis, leaderboard tracking, and daily challenges.
+            </p>
+
+            <div class="demo-points">
+                <div class="demo-point">AI-powered interview preparation</div>
+                <div class="demo-point">Smart resume improvement</div>
+                <div class="demo-point">Coding and leaderboard challenges</div>
+                <div class="demo-point">Performance tracking dashboard</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

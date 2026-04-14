@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PrepAR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="auth-box">
+        <h2 id="form-title">Login</h2>
+
+        <input type="email" id="email" placeholder="Enter Email">
+        <input type="password" id="password" placeholder="Enter Password">
+
+        <button onclick="handleAuth()" id="auth-btn">Login</button>
+
+        <p id="result"></p>
+
+        <p class="switch">
+            New user? <span onclick="toggleForm()">Sign Up</span>
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
