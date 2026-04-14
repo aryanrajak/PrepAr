@@ -13,7 +13,15 @@ const app = express();
 
 connectDB();
 
-app.use(cors());
+app.use(cors({
+    origin: [
+        "https://gregarious-taiyaki-507db1.netlify.app",
+        "http://localhost:5500",
+        "http://127.0.0.1:5500"
+    ],
+    methods: ["GET", "POST"],
+    credentials: false
+}));
 app.use(express.json());
 
 
@@ -466,17 +474,33 @@ app.post("/api/login", async (req, res) => {
     }
 });
 
-app.post("/api/signup", (req, res) => {
-    const { email, password } = req.body;
+app.post("/api/signup", async (req, res) => {
+    try {
+        const { email, password } = req.body;
 
-    const existingUser = users.find((u) => u.email === email);
+        const existingUser = await User.findOne({ email });
 
-    if (existingUser) {
-        return res.json({ success: false, message: "User already exists" });
+        if (existingUser) {
+            return res.json({
+                success: false,
+                message: "User already exists"
+            });
+        }
+
+        const newUser = new User({ email, password });
+        await newUser.save();
+
+        res.json({
+            success: true,
+            message: "Signup successful"
+        });
+    } catch (error) {
+        console.log("Signup error:", error.message);
+        res.json({
+            success: false,
+            message: "Signup failed"
+        });
     }
-
-    users.push({ email, password });
-    res.json({ success: true, message: "Signup successful" });
 });
 
 app.get("/api/dashboard", (req, res) => {
